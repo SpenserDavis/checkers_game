@@ -1,0 +1,167 @@
+.container {
+  background-color: grey;
+  min-height: 600px;
+}
+
+.square {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.square-dark {
+  background-color: rgb(55, 54, 65);
+}
+
+.square-light {
+  background-color: rgb(255, 255, 255);
+}
+
+.eligible-move {
+  background-color: lightblue;
+}
+
+.board {
+  padding: 40px;
+}
+
+.board-center {
+  margin: 0 auto;
+}
+
+.board-container {
+  margin-bottom: 10px;
+}
+
+.row {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.board-resizer-input {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.checkerPiece {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  margin: auto;
+  top: 25%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.king {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.triangular {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  z-index: 1;
+}
+
+.triangular.king {
+  top: 41%;
+  left: 16%;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red-triangular {
+  border-bottom: 44px solid red;
+}
+
+.green-triangular {
+  border-bottom: 44px solid green;
+}
+
+.yellow-triangular {
+  border-bottom: 44px solid yellow;
+}
+
+.purple-triangular {
+  border-bottom: 44px solid purple;
+}
+
+.orange-triangular {
+  border-bottom: 44px solid orange;
+}
+
+.black-triangular {
+  border-bottom: 44px solid black;
+}
+
+.shapesInput,
+.colorsInput {
+  padding: 10px;
+}
+
+form {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.active-piece {
+  border: 3px solid rgb(204, 255, 0);
+}
+
+.active-triangle {
+  width: 0;
+  height: 0;
+  border-left: 36px solid transparent;
+  border-right: 36px solid transparent;
+  border-bottom: 52px solid rgb(204, 255, 0);
+  z-index: 0;
+  top: 20%;
+}
+
+.save-and-reset {
+  margin-bottom: 10px !important;
+}
+
+.btn {
+  margin: 10px;
+}
