@@ -3,21 +3,11 @@ import controller from "./decorators/controller";
 import use from "./decorators/use";
 import Game, { IGame } from "../models/game";
 import CheckersService from "../services/CheckersService";
-import ICheckersService from "../services/interfaces/ICheckersService";
 import { logger, RequestWithBody } from "../controllers";
 import { NextFunction, Response, Request } from "express";
 
 @controller("/checkers")
 class CheckersController {
-  // private _checkersService: ICheckersService;
-
-  // constructor() {
-  //   console.log("ctor entered");
-  //   this._checkersService = CheckersService.getInstance();
-  // }
-
-  //ideally, the above would work, and methods could be converted to arrow functions
-
   @get("/:id")
   @use(logger)
   async getGameById(
@@ -28,7 +18,7 @@ class CheckersController {
     try {
       console.log("controller get");
 
-      const game: IGame | null = await CheckersService.getInstance().getGameById(
+      const game: IGame | null = await CheckersService.getGameById(
         req.params.id
       );
       console.log("outside");
@@ -48,9 +38,7 @@ class CheckersController {
     next: NextFunction
   ): Promise<void> {
     try {
-      const gameId:
-        | string
-        | null = await CheckersService.getInstance().saveGame(req.body);
+      const gameId: string | null = await CheckersService.saveGame(req.body);
 
       res.status(201).send({ id: gameId });
     } catch (err) {
@@ -65,7 +53,7 @@ class CheckersController {
     next: NextFunction
   ): Promise<void> {
     try {
-      const game: IGame | null = await CheckersService.getInstance().deleteGame(
+      const game: IGame | null = await CheckersService.deleteGame(
         req.params.id
       );
       if (!game) {

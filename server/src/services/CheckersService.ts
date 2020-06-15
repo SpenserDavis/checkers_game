@@ -1,16 +1,6 @@
 import Game, { IGame } from "../models/game";
 
 class CheckersService {
-  private static instance: CheckersService;
-
-  static getInstance(): CheckersService {
-    if (!CheckersService.instance) {
-      CheckersService.instance = new CheckersService();
-    }
-
-    return CheckersService.instance;
-  }
-
   saveGame = async (gameInfo: IGame): Promise<string | null> => {
     const game: IGame = new Game({
       ...gameInfo,
@@ -30,4 +20,4 @@ class CheckersService {
   };
 }
 
-export default CheckersService;
+export default new CheckersService();
